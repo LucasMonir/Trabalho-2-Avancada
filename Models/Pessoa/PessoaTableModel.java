@@ -1,4 +1,4 @@
-package Pessoa;
+package Models.Pessoa;
 import java.util.*;
 import javax.swing.table.AbstractTableModel;
 

@@ -1,4 +1,4 @@
-package Pessoa;
+package Models.Pessoa;
 
 public class Pessoa {
     private String nome;
