@@ -160,8 +160,10 @@ public class TableController {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                at.getPtm().dellPessoa(at.getAlunoTable().getSelectedRow());
-                at.cleaner();
+                if(e.getKeyCode() == KeyEvent.VK_DELETE){
+                    at.getPtm().dellPessoa(at.getAlunoTable().getSelectedRow());
+                    at.cleaner();
+                }
             }
 
             @Override
@@ -314,8 +316,10 @@ public class TableController {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                pt.getPtm().dellPessoa(pt.getProfessorTable().getSelectedRow());
-                pt.cleaner();
+                if(e.getKeyChar() == KeyEvent.VK_DELETE){
+                    pt.getPtm().dellPessoa(pt.getProfessorTable().getSelectedRow());
+                    pt.cleaner();
+                }
             }
 
             @Override
