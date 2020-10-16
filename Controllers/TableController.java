@@ -78,6 +78,7 @@ public class TableController {
                     at.getPtm().getPessoa((at.getAlunoTable()).getSelectedRow()).setMatricula(at.getMatricula());
                     at.getPtm().getPessoa((at.getAlunoTable()).getSelectedRow()).setMateria(at.getMateria());
                     at.getPtm().getPessoa((at.getAlunoTable()).getSelectedRow()).setTurno(at.getTurno());
+                    at.getPtm().fireTableDataChanged();
                 } else {
                     JOptionPane.showMessageDialog(null, "Cancelado!", "Operação cancelada", JOptionPane.WARNING_MESSAGE);
                 }
@@ -231,6 +232,7 @@ public class TableController {
                     pt.getPtm().getPessoa((pt.getProfessorTable()).getSelectedRow()).setMatricula(pt.getMatricula());
                     pt.getPtm().getPessoa((pt.getProfessorTable()).getSelectedRow()).setMateria(pt.getMateria());
                     pt.getPtm().getPessoa((pt.getProfessorTable()).getSelectedRow()).setTurno(pt.getTurno());
+                    pt.getPtm().fireTableDataChanged();
                 } else {
                     JOptionPane.showMessageDialog(null, "Cancelado!", "Operação cancelada", JOptionPane.WARNING_MESSAGE);
                 }
