@@ -28,7 +28,6 @@ public class Janela extends JFrame {
         setPreferredSize(new Dimension(400, 300));
         setResizable(false);
 
-        
         selecaoMenu.setSelectedIndex(0);
         setLayout(new GridLayout(0, 1));
 
