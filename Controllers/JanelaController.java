@@ -30,11 +30,15 @@ public class JanelaController {
             @Override
             public void mouseReleased(java.awt.event.MouseEvent e) {}
 
-            @Override
-            public void mouseEntered(java.awt.event.MouseEvent e) {}
+           @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                jn.setOkColor(new Color(162, 162, 200));
+            }
 
             @Override
-            public void mouseExited(java.awt.event.MouseEvent e) {}
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                jn.setOkColor(new Color(182, 182, 200));
+            }
             
         });
 
