@@ -17,7 +17,7 @@ public class AlunoTable extends JFrame {
     private JButton registrar = new JButton("Registrar");
     private JButton editar = new JButton("Editar");
     private JButton cancelar = new JButton("Cancelar");
-    private Color corPadrao = registrar.getBackground();
+    private Color corPadrao = new Color(182, 182, 200);
     private ButtonGroup group = new ButtonGroup();
     private JTable alunoTable = new JTable();
 
@@ -25,6 +25,10 @@ public class AlunoTable extends JFrame {
         super("Alunos matriculados: ");
         setResizable(false);
         setPreferredSize(new Dimension(400, 300));
+        
+        registrar.setBackground(corPadrao);
+        editar.setBackground(corPadrao);
+        cancelar.setBackground(corPadrao);
 
         ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
         pessoas.add(new Pessoa("Benevenuto", 1234, 213123, "Teologia", "Noturno"));
@@ -35,33 +39,51 @@ public class AlunoTable extends JFrame {
 
         JPanel p1 = new JPanel();
         p1.setLayout(new GridLayout(0, 3));
+        p1.setBackground(new Color(87, 74, 120));
 
         JRadioButton noturno = new JRadioButton("Noturno");
         noturno.setActionCommand("Noturno");
+        noturno.setBackground(new Color(87, 74, 120));
+        noturno.setForeground(new Color (255, 255, 255));
 
         JRadioButton matutino = new JRadioButton("Matutino");
-        noturno.setActionCommand("Matutino");
+        matutino.setActionCommand("Matutino");
+        matutino.setBackground(new Color(87, 74, 120));
+        matutino.setForeground(new Color (255, 255, 255));
 
         JRadioButton vespertino = new JRadioButton("Vespertino");
-        noturno.setActionCommand("Vespertino");
+        vespertino.setActionCommand("Vespertino");
+        vespertino.setBackground(new Color(87, 74, 120));
+        vespertino.setForeground(new Color (255, 255, 255));
 
         group.add(matutino);
         group.add(vespertino);
         group.add(noturno);
 
-        p1.add(new JLabel("Nome: "));
+        JLabel nomeLabel = new JLabel("Nome: ");
+        nomeLabel.setForeground(new Color(255, 255, 255));
+        p1.add(nomeLabel);
         p1.add(nome);
-        p1.add(new JLabel("Turno: "));
 
-        p1.add(new JLabel("CPF (Numérico): "));
+        JLabel turnoLabel = new JLabel("Turno: ");
+        turnoLabel.setForeground(new Color(255, 255, 255));
+        p1.add(turnoLabel);
+
+        JLabel cpfLabel = new JLabel("CPF: ");
+        cpfLabel.setForeground(new Color(255, 255, 255));
+        p1.add(cpfLabel);
         p1.add(cpf);
         p1.add(matutino);
 
-        p1.add(new JLabel("Matricula (Numérico): "));
+        JLabel matriculaLabel = new JLabel("Matrícula: ");
+        matriculaLabel.setForeground(new Color(255, 255, 255));
+        p1.add(matriculaLabel);
         p1.add(matricula);
         p1.add(vespertino);
 
-        p1.add(new JLabel("Matéria: "));
+        JLabel materiaLabel = new JLabel("Matéria: ");
+        materiaLabel.setForeground(new Color(255, 255, 255));
+        p1.add(materiaLabel);
         p1.add(materia);
         p1.add(noturno);
 
