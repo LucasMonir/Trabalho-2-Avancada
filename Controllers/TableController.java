@@ -49,9 +49,9 @@ public class TableController {
             @Override
             public void mouseReleased(java.awt.event.MouseEvent e) {}
 
-            @Override
+             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                at.getRegistrar().setBackground(Color.CYAN);
+                at.getRegistrar().setBackground(new Color(162, 162, 200));
             }
 
             @Override
@@ -92,7 +92,7 @@ public class TableController {
 
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                at.getEditar().setBackground(Color.CYAN);
+                at.getEditar().setBackground(new Color(162, 162, 200));
             }
 
             @Override
@@ -117,7 +117,7 @@ public class TableController {
 
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                at.getCancelar().setBackground(Color.CYAN);
+                at.getCancelar().setBackground(new Color(162, 162, 200));
             }
 
             @Override
@@ -207,7 +207,7 @@ public class TableController {
 
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                pt.getRegistrar().setBackground(Color.GRAY);
+                pt.getRegistrar().setBackground(new Color(162, 162, 200));
             }
 
             @Override
@@ -248,7 +248,7 @@ public class TableController {
 
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                pt.getEditar().setBackground(Color.GRAY);
+                pt.getEditar().setBackground(new Color(162, 162, 200));
             }
 
             @Override
@@ -273,7 +273,7 @@ public class TableController {
 
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                pt.getCancelar().setBackground(Color.GRAY);
+                pt.getCancelar().setBackground(new Color(162, 162, 200));
             }
 
             @Override
