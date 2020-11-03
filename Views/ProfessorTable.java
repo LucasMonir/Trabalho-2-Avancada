@@ -18,15 +18,20 @@ public class ProfessorTable extends JFrame {
     private JButton registrar = new JButton("Registrar");
     private JButton editar = new JButton("Editar");
     private JButton cancelar = new JButton("Cancelar");
-    private Color corPadrao = registrar.getBackground();
+    private Color corPadrao = new Color(182, 182, 200);
     private JTable professorTable = new JTable();
 
     public ProfessorTable() {
         super("Professores registrados: ");
-
+        setPreferredSize(new Dimension(400, 600));
         ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
+        
         pessoas.add(new Pessoa("Kleber", 1234, 213123, "Teologia", "Noturno"));
         pessoas.add(new Pessoa("Rogério", 12213, 2112323, "S.I", "Diurno"));
+
+        registrar.setBackground(corPadrao);
+        editar.setBackground(corPadrao);
+        cancelar.setBackground(corPadrao);
 
         setLayout(new BorderLayout());
         setDefaultCloseOperation(HIDE_ON_CLOSE);
@@ -46,23 +51,33 @@ public class ProfessorTable extends JFrame {
         menu.add(newProfessor);
 
         JPanel p1 = new JPanel();
+        p1.setBackground(new Color(87, 74, 120));
         p1.setBorder(new EmptyBorder(20, 20, 20, 20));
-
         p1.setLayout(new GridLayout(0, 1));
 
-        p1.add(new JLabel("Nome: "));
+        JLabel nomeLabel = new JLabel("Nome: ");
+        nomeLabel.setForeground(new Color(255, 255, 255));
+        p1.add(nomeLabel);
         p1.add(nome);
 
-        p1.add(new JLabel("CPF: "));
+        JLabel cpfLabel = new JLabel("CPF: ");
+        cpfLabel.setForeground(new Color(255, 255, 255));
+        p1.add(cpfLabel);
         p1.add(cpf);
 
-        p1.add(new JLabel("Matricula do Profesor: "));
+        JLabel matriculaLabel = new JLabel("Matrícula do Profesor: ");
+        matriculaLabel.setForeground(new Color(255, 255, 255));
+        p1.add(matriculaLabel);
         p1.add(matricula);
 
-        p1.add(new JLabel("Matéria: "));
+        JLabel materiaLabel = new JLabel("Matéria: ");
+        materiaLabel.setForeground(new Color(255, 255, 255));
+        p1.add(materiaLabel);
         p1.add(materia);
 
-        p1.add(new JLabel("Turno: "));
+        JLabel turnoLabel = new JLabel("Turno: ");
+        turnoLabel.setForeground(new Color(255, 255, 255));
+        p1.add(turnoLabel);
         p1.add(turno);
 
         ptm.setPessoas(pessoas);
