@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.awt.Color;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import Views.Janela;
