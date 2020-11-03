@@ -4,9 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import Controllers.TableController;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -24,25 +22,35 @@ public class Janela extends JFrame {
 
     public Janela() {
         super("Gerenciamento de Alunos e Professores");
-
         setPreferredSize(new Dimension(400, 300));
         setResizable(false);
 
         selecaoMenu.setSelectedIndex(0);
         setLayout(new GridLayout(0, 1));
+        selecaoMenu.setBackground(new Color(87, 74, 120));
+        selecaoMenu.setForeground(new Color (255,255,255));
 
         JPanel p1 = new JPanel();
         p1.setLayout(new GridLayout(0, 1));
-        
+        p1.setBackground(new Color(75, 74, 100));
+
         p1.add(numeroDeAulos);
         p1.add(numeroDeProfessores);
-        p1.add(new JLabel("Selecione opção a ser exibida: "));
+
+        numeroDeAulos.setForeground(new Color(255, 255, 255));
+        numeroDeProfessores.setForeground(new Color(255, 255, 255));
+        ok.setBackground(new Color(182, 182, 200));
+
+        JLabel l1 = new JLabel("Selecione opção a ser exibida: ");
+        l1.setForeground(new Color(255, 255, 255));
+        p1.add(l1);
         p1.add(selecaoMenu);
         p1.add(ok);
 
         try {
-            BufferedImage myPicture = ImageIO.read(new File("trab 2\\Trabalho-2-Avancada\\Views\\unisul.png"));
+            BufferedImage myPicture = ImageIO.read(new File("unisul.png"));
             JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+            picLabel.setForeground(new Color(75, 74, 100));
             add(picLabel);
         } catch (Exception e) {
             System.out.println(e + "FILE NOT FOUND!!!!");
@@ -60,6 +68,10 @@ public class Janela extends JFrame {
 
     public void setOkAction(MouseListener action) {
         ok.addMouseListener(action);
+    }
+
+    public void setOkColor(Color c){
+        ok.setBackground(c);
     }
 
     public void setContentPanelAction(MouseListener action) {
@@ -90,7 +102,4 @@ public class Janela extends JFrame {
         return a;
     }
 
-    public static void main(String args[]) {
-        new Janela();
-    }
 }
