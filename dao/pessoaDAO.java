@@ -5,17 +5,16 @@ import java.util.*;
 import java.util.ArrayList;
 
 import database.DBConnection;
-import Models.Aluno.*;
 import Models.Pessoa.*;
 
-public class alunoDAO {
-    private Aluno aluno;
+public class pessoaDAO {
+    private Pessoa pessoa;
     private int Position;
-    private List <Aluno> AlunoList;
+    private List <Pessoa> PessoaList;
 
-    public  alunoDAO() {
+    public  pessoaDAO() {
         Position = 0;
-        AlunoList = new ArrayList<Aluno>();
+        PessoaList = new ArrayList<Pessoa>();
         create();
 
     }
@@ -25,7 +24,7 @@ public class alunoDAO {
             Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
 			String query =
-				"create table if not exists aluno ( " +
+				"create table if not exists pessoa ( " +
                 "nome VARCHAR (50), " +
                 "cpf INTEGER, " +
                 "matricula INTEGER, " +
@@ -41,20 +40,20 @@ public class alunoDAO {
 			Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "select * from aluno";
+			String query = "select * from pessoa";
 			if (filter.length() > 0) {
 				query += " where " + filter;
 			}
 			System.out.println("QUERY: " + query);
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {
-				Aluno alun = new Aluno();
-				alun.setMatricula(rs.getInt("matricula"));
-				alun.setNome(rs.getString("nome"));
-                alun.setCpf(rs.getInt("cpf"));
-                alun.setMateria(rs.getString("materia"));
-                alun.setTurno(rs.getString("turno"));
-				AlunoList.add(alun);
+				Pessoa pessoa = new Pessoa();
+				pessoa.setMatricula(rs.getInt("matricula"));
+				pessoa.setNome(rs.getString("nome"));
+                pessoa.setCpf(rs.getInt("cpf"));
+                pessoa.setMateria(rs.getString("materia"));
+                pessoa.setTurno(rs.getString("turno"));
+				PessoaList.add(pessoa);
 			}
 			stmt.close();
 		} catch (SQLException e) {
@@ -62,13 +61,13 @@ public class alunoDAO {
 		}
     }
     
-    public void insert(Aluno alun) {
+    public void insert(Pessoa pessoa) {
 		try {
 			Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "insert into aluno (cpf, nome, matricula, turno, materia) " + "values ("
-					+ alun.getMatricula() + ",'" + alun.getNome() + "', " + alun.getCpf() + alun.getMateria() + "', "+ alun.getTurno() " )";
+			String query = "insert into pessoa (cpf, nome, matricula, turno, materia) " + "values ("
+					+ pessoa.getMatricula() + ",'" + pessoa.getNome() + "', " + pessoa.getCpf() + pessoa.getMateria() + "', "+ pessoa.getTurno() " )";
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -78,17 +77,17 @@ public class alunoDAO {
 		this.clear();
     }
     
-    public void update(Aluno alun) {
+    public void update(Pessoa pessoa) {
 		try {
 			Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
 
-			String query = "update aluno set " +
-						"nome = '" + alun.getNome() + "', " +
-                        "matricula = " + alun.getMatricula() + " " +
-                        "materia = " + alun.getMateria()+ " " +
-                        "turno = " + alun.getMatricula() + " " +
-						"where cpf = " + alun.getCpf();
+			String query = "update pessoa set " +
+						"nome = '" + pessoa.getNome() + "', " +
+                        "matricula = " + pessoa.getMatricula() + " " +
+                        "materia = " + pessoa.getMateria()+ " " +
+                        "turno = " + pessoa.getMatricula() + " " +
+						"where cpf = " + pessoa.getCpf();
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -97,11 +96,11 @@ public class alunoDAO {
 		}
 		this.clear();
     }
-    public void delete(Aluno aluno) {
+    public void delete(Pessoa pessoa) {
 		try {
 			Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
-			String query = "delete from aluno where cpf = " + aluno.getCpf();
+			String query = "delete from pessoa where cpf = " + pessoa.getCpf();
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -112,7 +111,7 @@ public class alunoDAO {
     }
     public void clear() {
 		Position = 0;
-		AlunoList.clear();
+		PessoaList.clear();
 	}
 
 	public void reset() {
@@ -120,16 +119,16 @@ public class alunoDAO {
 	}
 
 	public int size() {
-		return AlunoList.size();
+		return PessoaList.size();
 	}
 
-	public Aluno next() {
-		Aluno alun = null;
-		if (Position < AlunoList.size()) {
-			alun = AlunoList.get(Position);
+	public Pessoa next() {
+		Pessoa pessoa = null;
+		if (Position < PessoaList.size()) {
+			pessoa = PessoaList.get(Position);
 			Position++;
 		}
-		return alun;
+		return pessoa;
 	}
 }
 
