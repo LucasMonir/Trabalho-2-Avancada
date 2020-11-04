@@ -1,7 +1,6 @@
 package Models.Pessoa;
 import java.util.*;
 import javax.swing.table.AbstractTableModel;
-
 public class PessoaTableModel extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
 
@@ -41,7 +40,7 @@ public class PessoaTableModel extends AbstractTableModel {
     public int getColumnCount() {
         return 5;
     }
-
+    
     public String getColumnName(int columnIndex) {
         switch (columnIndex) {
             case 0:

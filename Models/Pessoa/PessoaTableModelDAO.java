@@ -1,7 +1,8 @@
 package Models.Pessoa;
 import java.util.*;
+import java.sql.*;
 import javax.swing.table.AbstractTableModel;
-
+import dao.pessoaDAO;
 public class PessoaTableModel extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
 

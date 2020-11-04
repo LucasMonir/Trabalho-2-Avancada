@@ -66,9 +66,8 @@ public class alunoDAO {
 		try {
 			Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
-
 			String query = "insert into aluno (cpf, nome, matricula, turno, materia) " + "values ("
-					+ alun.getMatricula() + ",'" + alun.getNome() + "', " + alun.getCpf() + alun.getMateria() + "', "+ alun.getTurno() " )";
+					+ alun.getMatricula() + ",'" + alun.getNome() + "', " + alun.getCpf() + alun.getMateria() + "', "+ alun.getTurno() + ")";
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -97,11 +96,11 @@ public class alunoDAO {
 		}
 		this.clear();
     }
-    public void delete(Aluno aluno) {
+    public void delete(Aluno alun) {
 		try {
 			Connection conn = DBConnection.getConnection();
 			Statement stmt = conn.createStatement();
-			String query = "delete from aluno where cpf = " + aluno.getCpf();
+			String query = "delete from aluno where cpf = " + alun.getCpf();
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -131,8 +130,5 @@ public class alunoDAO {
 		}
 		return alun;
 	}
-}
 
-        }
-    }
 }
