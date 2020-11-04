@@ -30,7 +30,7 @@ public class alunoDAO {
                 "cpf INTEGER, " +
                 "matricula INTEGER, " +
                 "materia VARCHAR(50), " +
-                "turno VARCHAR(50), " +
+                "turno VARCHAR(50)";
 			stmt.execute(query);
 		} catch (SQLException e) {
 			e.printStackTrace();

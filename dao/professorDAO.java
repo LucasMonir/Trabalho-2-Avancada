@@ -3,13 +3,11 @@ package dao;
 import java.sql.*;
 import java.util.*;
 import java.util.ArrayList;
-
 import database.DBConnection;
-import Models.professor.*;
 import Models.Pessoa.*;
-import Models.Profs.Professor;
+import Models.Profs.*;
 
-public class professorDAO {
+public class professorDAO {	
     private Professor professor;
     private int Position;
     private List <Professor> ProfessorList;
@@ -31,7 +29,7 @@ public class professorDAO {
                 "cpf INTEGER, " +
                 "matricula INTEGER, " +
                 "materia VARCHAR(50), " +
-                "turno VARCHAR(50), " +
+                "turno VARCHAR(50)";
 			stmt.execute(query);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -49,7 +47,7 @@ public class professorDAO {
 			System.out.println("QUERY: " + query);
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {
-				Professor prof= new Professor();
+				Professor prof = new Professor();
 				prof.setMatricula(rs.getInt("matricula"));
 				prof.setNome(rs.getString("nome"));
                 prof.setCpf(rs.getInt("cpf"));
@@ -69,7 +67,7 @@ public class professorDAO {
 			Statement stmt = conn.createStatement();
 
 			String query = "insert into professor (cpf, nome, matricula, turno, materia) " + "values ("
-					+ prof.getMatricula() + ",'" + prof.getNome() + "', " + prof.getCpf() + prof.getMateria() + "', "+ prof.getTurno() " )";
+					+ prof.getMatricula() + ",'" + prof.getNome() + "', " + prof.getCpf() + prof.getMateria() + "', "+ prof.getTurno() + " )";
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -134,6 +132,6 @@ public class professorDAO {
 	}
 }
 
-        }
-    }
-}
+        
+    
+

@@ -3,7 +3,7 @@ import java.util.*;
 import java.sql.*;
 import javax.swing.table.AbstractTableModel;
 import dao.pessoaDAO;
-public class PessoaTableModel extends AbstractTableModel {
+public class PessoaTableModelDAO extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
 
     private ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();

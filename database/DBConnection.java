@@ -19,7 +19,7 @@ public class DBConnection {
     }
 
     static public Connection getConnection() {
-        if (connection = null) {
+        if (connection == null) {
             try {
 
                 Class.forName(dbdriver);

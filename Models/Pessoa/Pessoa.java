@@ -15,6 +15,8 @@ public class Pessoa {
         setTurno(turno);
     }
 
+    public Pessoa(){}
+
     public String getNome() {
         return nome;
     }

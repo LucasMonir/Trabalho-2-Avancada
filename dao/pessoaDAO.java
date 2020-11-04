@@ -29,7 +29,7 @@ public class pessoaDAO {
                 "cpf INTEGER, " +
                 "matricula INTEGER, " +
                 "materia VARCHAR(50), " +
-                "turno VARCHAR(50), " +
+                "turno VARCHAR(50) ";
 			stmt.execute(query);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -67,7 +67,7 @@ public class pessoaDAO {
 			Statement stmt = conn.createStatement();
 
 			String query = "insert into pessoa (cpf, nome, matricula, turno, materia) " + "values ("
-					+ pessoa.getMatricula() + ",'" + pessoa.getNome() + "', " + pessoa.getCpf() + pessoa.getMateria() + "', "+ pessoa.getTurno() " )";
+					+ pessoa.getMatricula() + ",'" + pessoa.getNome() + "', " + pessoa.getCpf() + pessoa.getMateria() + "', "+ pessoa.getTurno() + " )";
 			System.out.println("QUERY: " + query);
 			stmt.executeUpdate(query);
 			stmt.close();
@@ -132,6 +132,6 @@ public class pessoaDAO {
 	}
 }
 
-        }
-    }
-}
+        
+    
+
