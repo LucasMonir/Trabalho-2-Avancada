@@ -12,3 +12,5 @@ TODO: Integrar DAO no Model
 
 <p> Cadastro de professores: </p>
 <img src="https://github.com/LucasMonir/Arduino-personal-projects/blob/master/3.PNG?raw=true">
+
+<p> Grupo: Christian muniz, Ian Karkles, Lucas monir </p>
